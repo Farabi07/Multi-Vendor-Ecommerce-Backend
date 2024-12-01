@@ -16,8 +16,6 @@ from commons.enums import PermissionEnum
 from commons.pagination import Pagination
 
 
-
-
 # Create your views here.
 
 @extend_schema(

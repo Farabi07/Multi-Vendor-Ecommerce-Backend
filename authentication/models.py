@@ -455,7 +455,8 @@ class Vendor(User):
                 img = image.resize(w_h)
                 img.save(path) 
 
-
+    def __str__(self):
+        return self.first_name
 
 
 class CustomerType(models.Model):
