@@ -5,7 +5,8 @@ from authentication.models import *
 
 class ProductCategory(models.Model):
     title = models.CharField(max_length=250,null=True,blank=True)
-    details = models.TextField(null=True)
+    details = models.TextField(null=True,blank=True)
+    top_categories = models.BooleanField(default=False,null=True,blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

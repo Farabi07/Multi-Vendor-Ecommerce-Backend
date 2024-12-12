@@ -81,7 +81,7 @@ def getAContact(request, pk):
 
 @extend_schema(request=ContactSerializer, responses=ContactSerializer)
 @api_view(['POST'])
-@permission_classes([IsAuthenticated])
+# @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.ATTRIBUTE_CREATE.name])
 def createContact(request):
 	data = request.data

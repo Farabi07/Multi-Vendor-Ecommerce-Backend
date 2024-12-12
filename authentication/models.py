@@ -502,8 +502,6 @@ class Customer(User):
                 img.save(path) 
 
 
-
-
 class Qualification(models.Model):
     employee_id = models.ForeignKey(Employee, on_delete=models.CASCADE)
     degree_name = models.CharField(max_length=64)

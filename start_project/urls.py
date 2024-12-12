@@ -51,6 +51,7 @@ urlpatterns = [
 	# Site Settings module
 	path('general_setting/', include('site_settings.urls.general_setting_urls')),
 	path('homepage_slider/', include('site_settings.urls.homepage_slider_urls')),
+    path('contact/', include('site_settings.urls.contact_urls')),
 
     # Ecommerce module 
     path('ecom_product_category/',include('ecom.urls.product_category_urls')),

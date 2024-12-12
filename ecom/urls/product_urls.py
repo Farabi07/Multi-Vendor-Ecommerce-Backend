@@ -7,6 +7,8 @@ urlpatterns = [
 	path('api/v1/product/all/', views.getAllProduct),
 
 	path('api/v1/product/without_pagination/all/', views.getAllProductWithoutPagination),
+    
+	path('api/v1/product/latest_product/', views.getLatestProducts),
 
 	path('api/v1/product/<int:pk>', views.getAProduct),
 

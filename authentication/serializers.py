@@ -12,10 +12,6 @@ from authentication.models import *
 
 User = get_user_model()
 
-
-
-
-
 class PermissionListSerializer(serializers.ModelSerializer):
 	created_by = serializers.SerializerMethodField()
 	updated_by = serializers.SerializerMethodField()

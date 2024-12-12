@@ -1,0 +1,223 @@
+[
+    {
+        "model": "ecom.productcategory",
+        "pk": 1,
+        "fields": {
+            "title": "Electronics",
+            "details": "Electronic products including laptops, phones, etc.",
+            "created_at": "2024-12-04T00:00:00",
+            "updated_at": "2024-12-04T00:00:00",
+            "created_by": 2,
+            "updated_by": 2
+        }
+    },
+
+    {
+        "model": "ecom.product",
+        "pk": 3,
+        "fields": {
+            "category": 1,
+            "vendor": 2,
+            "title": "HP Spectre x360",
+            "details": "HP Spectre x360 - Premium Convertible Laptop with Intel i7",
+            "image": "ecom/ProductImage/hp_spectre_x360.jpg",
+            "price": 145000,
+            "created_at": "2024-12-04T00:00:00",
+            "updated_at": "2024-12-04T00:00:00",
+            "created_by": 2,
+            "updated_by": 2
+        }
+    },
+    {
+        "model": "ecom.product",
+        "pk": 4,
+        "fields": {
+            "category": 1,
+            "vendor": 2,
+            "title": "HP Envy 13",
+            "details": "HP Envy 13 - Ultra-portable laptop with high performance.",
+            "image": "ecom/ProductImage/hp_envy_13.jpg",
+            "price": 99900,
+            "created_at": "2024-12-04T00:00:00",
+            "updated_at": "2024-12-04T00:00:00",
+            "created_by": 2,
+            "updated_by": 2
+        }
+    },
+    {
+        "model": "ecom.product",
+        "pk": 5,
+        "fields": {
+            "category": 1,
+            "vendor": 2,
+            "title": "HP Pavilion x360",
+            "details": "HP Pavilion x360 Convertible - Touchscreen Laptop",
+            "image": "ecom/ProductImage/hp_pavilion_x360.jpg",
+            "price": 95000,
+            "created_at": "2024-12-04T00:00:00",
+            "updated_at": "2024-12-04T00:00:00",
+            "created_by": 2,
+            "updated_by": 2
+        }
+    },
+    {
+        "model": "ecom.product",
+        "pk": 6,
+        "fields": {
+            "category": 1,
+            "vendor": 2,
+            "title": "HP Elite Dragonfly",
+            "details": "HP Elite Dragonfly - Premium Business Convertible Laptop",
+            "image": "ecom/ProductImage/hp_elite_dragonfly.jpg",
+            "price": 160000,
+            "created_at": "2024-12-04T00:00:00",
+            "updated_at": "2024-12-04T00:00:00",
+            "created_by": 2,
+            "updated_by": 2
+        }
+    },
+    {
+        "model": "ecom.product",
+        "pk": 7,
+        "fields": {
+            "category": 1,
+            "vendor": 2,
+            "title": "HP Omen 15",
+            "details": "HP Omen 15 - High-performance Gaming Laptop",
+            "image": "ecom/ProductImage/hp_omen_15.jpg",
+            "price": 135000,
+            "created_at": "2024-12-04T00:00:00",
+            "updated_at": "2024-12-04T00:00:00",
+            "created_by": 2,
+            "updated_by": 2
+        }
+    },
+    {
+        "model": "ecom.product",
+        "pk": 8,
+        "fields": {
+            "category": 1,
+            "vendor": 2,
+            "title": "Asus ZenBook Flip",
+            "details": "Asus ZenBook Flip - 2-in-1 Laptop with Intel Core i7",
+            "image": "ecom/ProductImage/asus_zenbook_flip.jpg",
+            "price": 105000,
+            "created_at": "2024-12-04T00:00:00",
+            "updated_at": "2024-12-04T00:00:00",
+            "created_by": 2,
+            "updated_by": 2
+        }
+    },
+    {
+        "model": "ecom.product",
+        "pk": 9,
+        "fields": {
+            "category": 1,
+            "vendor": 2,
+            "title": "Asus VivoBook 15",
+            "details": "Asus VivoBook 15 - Lightweight laptop with Intel Core i5",
+            "image": "ecom/ProductImage/asus_vivobook_15.jpg",
+            "price": 65000,
+            "created_at": "2024-12-04T00:00:00",
+            "updated_at": "2024-12-04T00:00:00",
+            "created_by": 2,
+            "updated_by": 2
+        }
+    },
+    {
+        "model": "ecom.product",
+        "pk": 10,
+        "fields": {
+            "category": 1,
+            "vendor": 2,
+            "title": "Lenovo ThinkPad X1 Carbon",
+            "details": "Lenovo ThinkPad X1 Carbon - Business Laptop with Intel Core i7",
+            "image": "ecom/ProductImage/lenovo_thinkpad_x1_carbon.jpg",
+            "price": 130000,
+            "created_at": "2024-12-04T00:00:00",
+            "updated_at": "2024-12-04T00:00:00",
+            "created_by": 2,
+            "updated_by": 2
+        }
+    },
+    {
+        "model": "ecom.product",
+        "pk": 11,
+        "fields": {
+            "category": 1,
+            "vendor": 2,
+            "title": "Lenovo Yoga C740",
+            "details": "Lenovo Yoga C740 - 2-in-1 Laptop with Intel i5",
+            "image": "ecom/ProductImage/lenovo_yoga_c740.jpg",
+            "price": 90000,
+            "created_at": "2024-12-04T00:00:00",
+            "updated_at": "2024-12-04T00:00:00",
+            "created_by": 2,
+            "updated_by": 2
+        }
+    },
+    {
+        "model": "ecom.product",
+        "pk": 12,
+        "fields": {
+            "category": 1,
+            "vendor": 2,
+            "title": "Dell Inspiron 15",
+            "details": "Dell Inspiron 15 - Affordable laptop with Intel Core i5",
+            "image": "ecom/ProductImage/dell_inspiron_15.jpg",
+            "price": 75000,
+            "created_at": "2024-12-04T00:00:00",
+            "updated_at": "2024-12-04T00:00:00",
+            "created_by": 2,
+            "updated_by": 2
+        }
+    },
+    {
+        "model": "ecom.product",
+        "pk": 13,
+        "fields": {
+            "category": 1,
+            "vendor": 2,
+            "title": "Acer Aspire 5",
+            "details": "Acer Aspire 5 - Budget Laptop with AMD Ryzen 5",
+            "image": "ecom/ProductImage/acer_aspire_5.jpg",
+            "price": 45000,
+            "created_at": "2024-12-04T00:00:00",
+            "updated_at": "2024-12-04T00:00:00",
+            "created_by": 2,
+            "updated_by": 2
+        }
+    },
+    {
+        "model": "ecom.product",
+        "pk": 14,
+        "fields": {
+            "category": 1,
+            "vendor": 2,
+            "title": "Acer Predator Helios 300",
+            "details": "Acer Predator Helios 300 - Gaming Laptop with NVIDIA RTX 3060",
+            "image": "ecom/ProductImage/acer_predator_helios_300.jpg",
+            "price": 110000,
+            "created_at": "2024-12-04T00:00:00",
+            "updated_at": "2024-12-04T00:00:00",
+            "created_by": 2,
+            "updated_by": 2
+        }
+    },
+    {
+        "model": "ecom.product",
+        "pk": 15,
+        "fields": {
+            "category": 1,
+            "vendor": 2,
+            "title": "MSI GF65 Thin",
+            "details": "MSI GF65 Thin - Gaming Laptop with Intel Core i7",
+            "image": "ecom/ProductImage/msi_gf65_thin.jpg",
+            "price": 85000,
+            "created_at": "2024-12-04T00:00:00",
+            "updated_at": "2024-12-04T00:00:00",
+            "created_by": 2,
+            "updated_by": 2
+        }
+    }
+]

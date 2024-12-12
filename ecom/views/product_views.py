@@ -134,7 +134,6 @@ def searchProduct(request):
 
 
 
-
 @extend_schema(request=ProductSerializer, responses=ProductSerializer)
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
@@ -154,8 +153,6 @@ def createProduct(request):
 		return Response(serializer.data, status=status.HTTP_201_CREATED)
 	else:
 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
 
 
 @extend_schema(request=ProductSerializer, responses=ProductSerializer)
@@ -189,4 +186,45 @@ def deleteProduct(request, pk):
 		return Response({'detail': f'Product id - {pk} is deleted successfully'}, status=status.HTTP_200_OK)
 	except ObjectDoesNotExist:
 		return Response({'detail': f"Product id - {pk} doesn't exists"}, status=status.HTTP_400_BAD_REQUEST)
+
+@extend_schema(
+	parameters=[
+		OpenApiParameter("page"),
+		
+		OpenApiParameter("size"),
+  ],
+	request=ProductSerializer,
+	responses=ProductSerializer
+)
+# @permission_classes([IsAuthenticated])
+# @has_permissions([PermissionEnum.PERMISSION_DETAILS_VIEW.name])
+@api_view(['GET'])
+def getLatestProducts(request):
+    # Fetch and sort products by id (latest first)
+    products = Product.objects.all().order_by('-id')[:8]  # Only take the 10 latest products
+    total_elements = products.count()
+
+    # Pagination parameters
+    page = request.query_params.get('page')  
+    size = request.query_params.get('size') 
+
+    # Pagination logic
+    pagination = Pagination()
+    pagination.page = page
+    pagination.size = size
+    products = pagination.paginate_data(products)
+
+    # Serialize the paginated products
+    serializer = ProductListSerializer(products, many=True)
+
+    # Prepare the response
+    response = {
+        'latest_products': serializer.data,
+        'page': pagination.page,
+        'size': pagination.size,
+        'total_pages': pagination.total_pages,
+        'total_elements': total_elements,
+    }
+
+    return Response(response, status=status.HTTP_200_OK)
 
