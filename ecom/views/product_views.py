@@ -33,31 +33,47 @@ from commons.pagination import Pagination
 # @permission_classes([IsAuthenticated])
 # @has_permissions([PermissionEnum.PERMISSION_LIST_VIEW.name])
 def getAllProduct(request):
-	products = Product.objects.all()
-	total_elements = products.count()
+    """
+    API to fetch all products with pagination and the latest products (top 8).
+    Query Params:
+      - page: Page number for pagination
+      - size: Page size for pagination
+    Response:
+      - paginated list of all products
+      - top 8 latest products
+    """
+    # Fetch all products
+    all_products = Product.objects.all().order_by('id')  # Ensure order by ascending ID
+    total_elements = all_products.count()
 
-	page = request.query_params.get('page')
-	size = request.query_params.get('size')
+    # Fetch the latest 8 products sorted by ID (DESC)
+    latest_products = Product.objects.all().order_by('-id')[:8]
 
-	# Pagination
-	pagination = Pagination()
-	pagination.page = page
-	pagination.size = size
-	products = pagination.paginate_data(products)
+    # Pagination parameters for all products
+    page = request.query_params.get('page')
+    size = request.query_params.get('size')
 
-	serializer = ProductListSerializer(products, many=True)
+    # Apply pagination
+    pagination = Pagination()
+    pagination.page = page
+    pagination.size = size
+    paginated_products = pagination.paginate_data(all_products)
 
-	response = {
-		'products': serializer.data,
-		'page': pagination.page,
-		'size': pagination.size,
-		'total_pages': pagination.total_pages,
-		'total_elements': total_elements,
-	}
+    # Serialize data
+    all_products_serializer = ProductListSerializer(paginated_products, many=True)
+    latest_products_serializer = ProductListSerializer(latest_products, many=True)
 
-	return Response(response, status=status.HTTP_200_OK)
+    # Prepare response
+    response_data = {
+        'all_products': all_products_serializer.data if all_products_serializer.data else [],
+        'latest_products': latest_products_serializer.data,  # Top 8 latest products
+        'page': pagination.page,
+        'size': pagination.size,
+        'total_pages': pagination.total_pages,
+        'total_elements': total_elements,
+    }
 
-
+    return Response(response_data, status=status.HTTP_200_OK)
 
 
 @extend_schema(
